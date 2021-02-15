@@ -13,7 +13,7 @@ import io.cucumber.junit.CucumberOptions;
 				  			"html:target/htmlReports/report.html",
 				  			"json:target/JsonReports/report.json"},
 		monochrome = true,
-		dryRun = true
+		dryRun = false
 		)
 public class TestRunner {
 	 
