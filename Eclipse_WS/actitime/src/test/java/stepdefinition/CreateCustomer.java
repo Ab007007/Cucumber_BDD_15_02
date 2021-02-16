@@ -1,9 +1,13 @@
 package stepdefinition;
 
+import java.util.List;
+import java.util.Map;
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -46,7 +50,7 @@ public class CreateCustomer {
 		ActitimeUtils.clickOnCreateCustomer();
 	}
 
-	@When("click create customer by entering {string} and {string}")
+	@When("click create customer by entering {} and {}")
 	public void create_customer(String cn, String cd) {
 		ActitimeUtils.createCustomer(cn, cd);
 	}
@@ -65,5 +69,42 @@ public class CreateCustomer {
 	public void close_the_browser() {
 		driver.close();
 	}
+	
+	
+	
+	@When("click create customer by entering customer details from datatable")
+	public void click_create_customer_by_entering_customer_details_from_datatable(DataTable dataTable)
+	{
+	    	List<Map<String, String>> data = dataTable.asMaps();
+	    	System.out.println("Total element in list " + data.size());
+	    	String cn,cd;
+	    	for (int i = 0; i < data.size(); i++)
+	    	{
+				cn = data.get(i).get("customer_name");
+				cd = data.get(i).get("customer_desc");
+				ActitimeUtils.clickOnCreateCustomer();
+				ActitimeUtils.createCustomer(cn, cd);
+				ActitimeUtils.validateToastMessage();
+				
+			}
+	}
+	
+	@When("click create customer by entering customer details from list datatable")
+	public void click_create_customer(DataTable dataTable) 
+	{
+
+		List<List<String>> data = dataTable.asLists();
+		String cn,cd;
+		for (int i = 0; i < data.size(); i++) 
+		{
+			cn = data.get(i).get(0);
+			cd = data.get(i).get(1);
+			ActitimeUtils.clickOnCreateCustomer();
+			ActitimeUtils.createCustomer(cn, cd);
+			ActitimeUtils.validateToastMessage();
+		}
+	}
+
+
 
 }

@@ -7,7 +7,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "src/test/java/feature/createCustomer.feature",
+		features = "src/test/java/feature/createCustomerWithListData.feature",
 		glue = {"stepdefinition"},
 		plugin = {"pretty","junit:target/JunitReport/report.xml",
 				  			"html:target/htmlReports/report.html",

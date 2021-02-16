@@ -1,4 +1,4 @@
-Feature: Create Customer in Actitime
+Feature: Create Multiple Customer in Actitime
 
   Scenario: Customer Creation
     Given user is on login page
@@ -6,8 +6,9 @@ Feature: Create Customer in Actitime
     Then home page should be displayed
     When user click on tasks link
     Then tasks page should be displayed
-    When user click on create customer button
-    And click create customer by entering "Syn-BDD-Cu1" and "Syn-BDD-CdDes"
-    Then user validates the success message
+    When click create customer by entering customer details from datatable
+      | customer_name    | customer_desc         |
+      | Sync_Feb15_Cust7 | Sync_Feb15_Cust_Desc1 |
+      | Sync_Feb15_Cust8 | Sync_Feb15_Cust_Desc2 |
     And logout of the applicaiton
     And close the browser
