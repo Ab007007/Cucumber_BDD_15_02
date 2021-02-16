@@ -61,4 +61,11 @@ public class ActitimeLogin {
 		Thread.sleep(5000);
 		Assert.assertEquals("actiTIME - Login", driver.getTitle());
 	}
+	
+	@Then("close driver object")
+	public void close_driver_object() {
+	   driver.close();
+	}
+
+
 }

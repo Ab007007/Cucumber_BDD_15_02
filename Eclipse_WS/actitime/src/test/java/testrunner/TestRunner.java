@@ -7,13 +7,13 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "src/test/java/feature/login.feature",
+		features = "src/test/java/feature/googleSearchUsingExamples.feature",
 		glue = {"stepdefinition"},
 		plugin = {"pretty","junit:target/JunitReport/report.xml",
 				  			"html:target/htmlReports/report.html",
 				  			"json:target/JsonReports/report.json"},
-		monochrome = true,
-		dryRun = false
+		dryRun = false,
+		monochrome = true
 		)
 public class TestRunner {
 	 
