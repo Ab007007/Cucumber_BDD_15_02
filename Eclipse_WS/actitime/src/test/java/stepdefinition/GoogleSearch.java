@@ -9,12 +9,42 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import io.cucumber.java.After;
+import io.cucumber.java.AfterStep;
+import io.cucumber.java.Before;
+import io.cucumber.java.BeforeStep;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class GoogleSearch {
+	
+	@Before
+	public void startingScenario()
+	{
+		System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+	}
+	
+	@After
+	public void endingScenario()
+	{
+		System.out.println("#####################################################");
+	}
+	
+
+	@BeforeStep
+	public void executeBS()
+	{
+		System.out.println("----------------------------------------------");
+	}
+
+	@AfterStep
+	public void executeAS()
+	{
+		System.out.println("----------------------------------------------");
+	}
+	
 
 	WebDriver driver = null;
 	@Given("user is on google page")

@@ -7,11 +7,12 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "src/test/java/feature/createCustomerWithListData.feature",
+		features = "src/test/java/feature/",
 		glue = {"stepdefinition"},
 		plugin = {"pretty","junit:target/JunitReport/report.xml",
 				  			"html:target/htmlReports/report.html",
 				  			"json:target/JsonReports/report.json"},
+		tags = "@hooks",
 //		dryRun = true,
 		monochrome = true
 		)

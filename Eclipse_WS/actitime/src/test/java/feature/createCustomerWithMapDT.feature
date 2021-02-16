@@ -1,5 +1,6 @@
 Feature: Create Multiple Customer in Actitime
-
+	
+	@acitime
   Scenario: Customer Creation
     Given user is on login page
     When user login with "admin" and "manager"

@@ -1,3 +1,4 @@
+@sample
 Feature: Login Functionality
 
 Scenario: Validate successfull login

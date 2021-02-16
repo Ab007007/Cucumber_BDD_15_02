@@ -1,3 +1,4 @@
+@google
 Feature: Google AutoSuggestions
 
   Scenario Outline: Verify Auto Suggesions

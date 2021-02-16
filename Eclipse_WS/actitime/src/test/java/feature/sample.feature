@@ -1,3 +1,4 @@
+@maths
 Feature: Arithamatic Operations
 
 Scenario: Addition
