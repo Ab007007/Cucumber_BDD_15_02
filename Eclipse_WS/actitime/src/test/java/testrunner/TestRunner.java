@@ -7,12 +7,12 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "src/test/java/feature/googleSearchUsingExamples.feature",
+		features = "src/test/java/feature/createCustomer.feature",
 		glue = {"stepdefinition"},
 		plugin = {"pretty","junit:target/JunitReport/report.xml",
 				  			"html:target/htmlReports/report.html",
 				  			"json:target/JsonReports/report.json"},
-		dryRun = false,
+//		dryRun = true,
 		monochrome = true
 		)
 public class TestRunner {
