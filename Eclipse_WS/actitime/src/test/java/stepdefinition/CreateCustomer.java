@@ -6,6 +6,10 @@ import java.util.Map;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
@@ -105,6 +109,35 @@ public class CreateCustomer {
 		}
 	}
 
+
+	@Then("user search for a customer {} in Customer and project search box")
+	public void user_search_for_a_customer_in_customer_and_project_search_box(String cn) throws InterruptedException {
+	  driver.findElement(By.xpath("//div[@id='cpTreeBlock']//input[@type='text']")).sendKeys(cn);
+	}
+
+	@Then("user click of settings icon from the searchlist")
+	public void user_click_of_settings_icon_from_the_searchlist() throws InterruptedException {
+		 Actions act = new Actions(driver);
+		  act.moveToElement(driver.
+				  findElement(By.xpath
+						  ("//div[@class='node allCustomersNode selected']/following-sibling::div"))).perform();
+		  Thread.sleep(2000);
+		  act.click(driver.findElement(By.xpath("//div[@class='node allCustomersNode selected']/following-sibling::div/div[@class='editButton available']"
+				  ))).perform();
+	}
+	@When("user click on delete button present inside action")
+	public void user_click_on_delete_button_present_inside_action() {
+	   WebDriverWait wait  = new WebDriverWait(driver, 15);
+	   WebElement ele = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='edit_customer_sliding_panel sliding_panel']//div[text()='ACTIONS']")));
+	
+	   ele.click();
+	   driver.findElement(By.xpath("//div[@class='edit_customer_sliding_panel sliding_panel']//div[text()='Delete']")).click();
+	}
+	@When("click on delete permanently")
+	public void click_on_delete_permanently() {
+	   
+		driver.findElement(By.id("customerPanel_deleteConfirm_submitTitle")).click();
+	}
 
 
 }
