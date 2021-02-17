@@ -1,4 +1,4 @@
-@google
+@dev
 Feature: Google AutoSuggestions 
 
 Scenario: Verify Auto Suggesions

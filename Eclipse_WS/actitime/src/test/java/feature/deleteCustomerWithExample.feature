@@ -1,6 +1,6 @@
 Feature: Customer Delete Functionality
 
-	@dev
+	@dev1
   Scenario Outline: Delete Customer
     Given user is on login page
     When user login with "admin" and "manager"
@@ -17,6 +17,4 @@ Feature: Customer Delete Functionality
 
     Examples:
     |customer_name|
-    |Sync_Feb15_Cust7|
-    |Sync_Feb15_Cust8|
-    |Sync_Feb15_Cust9|
+    |Sync_Feb15_Cust10|
