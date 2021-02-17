@@ -12,7 +12,7 @@ import io.cucumber.junit.CucumberOptions;
 		plugin = {"pretty","junit:target/JunitReport/report.xml",
 				  			"html:target/htmlReports/report.html",
 				  			"json:target/JsonReports/report.json"},
-		tags = "@pom",
+		tags = "@jenkins",
 	//	dryRun = true,
 		monochrome = true
 		)
